@@ -1,1 +1,18 @@
-offers.stives.com
+; DNS zone file for yourdomain.com
+
+$TTL 1h  ; Time to Live, how long other DNS servers should cache the records (1 hour in this example)
+
+@     IN    SOA   ns1.yourdomain.com. hostmaster.yourdomain.com. (
+                2023072801  ; Serial number (increment this when you make changes)
+                1d          ; Refresh
+                2h          ; Retry
+                4w          ; Expire
+                1h          ; Minimum TTL
+                )
+
+      IN    NS    ns1.yourdomain.com.  ; Name Server
+
+      IN    A     123.456.789.10        ; The IP address of your main domain (e.g., yourdomain.com)
+
+; CNAME record for the subdomain offers.stives.com
+offers IN    CNAME baskar18.github.io. ; Point the subdomain to the destination (e.g., baskar18.github.io)
